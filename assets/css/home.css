@@ -1,6 +1,6 @@
 .main {
   width: 350px;
-  height: 550px;
+  height: 600px;
   overflow: hidden;
   background-color: #4e73df;
   border-radius: 20px;
@@ -74,7 +74,7 @@ button:hover {
   background: #11cd9b;
 }
 .login {
-  height: 490px;
+  height: 540px;
   background: white;
   border-radius: 60% / 10%;
   transform: translateY(-125px);
@@ -86,11 +86,23 @@ button:hover {
 }
 
 #chk:checked ~ .login {
-  transform: translateY(-520px);
+  transform: translateY(-570px);
 }
 #chk:checked ~ .login label {
   transform: scale(1);
 }
 #chk:checked ~ .signup label {
   transform: scale(0.6);
+}
+
+.su-input{
+  background: none;
+  margin-top: 0;
+}
+
+.su-info{
+  width: 60%;
+  justify-content: center;
+  margin: 5px auto;
+  
 }
