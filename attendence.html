@@ -90,7 +90,7 @@
                 <option>Class 9</option>
                 <option>Class 10</option>
               </select>
-              <select id="cls">
+              <select id="batchinfo">
                 <option>Select Batch</option>
                 <option>2020</option>
                 <option>2021</option>
@@ -99,7 +99,7 @@
               </select>
             </div>
             <div class="att-row">
-              <select id="cls">
+              <select id="courseinfo">
                 <option>Select Course</option>
                 <option>Btech</option>
                 <option>MBA</option>
@@ -122,7 +122,7 @@
               </label>
               <div class="att-row">
                 <input id="date" class="entry" type="date" />
-                <button class="att-btn" onclick="generateQR();renderAttendeeList()">Submit Attendance</button>
+                <button class="att-btn" onclick="getStudents()">Submit Attendance</button>
               </div>
 
             
@@ -142,6 +142,37 @@
           </div> -->
       </div>
     </div>
+    <script>
+      // get the values from id: courseinfo, batchinfo, date, image
+      // send the values to backend
+      // backend will return the list of students
+
+      function getStudents(){
+        var course = document.getElementById("courseinfo").value;
+        var batch = document.getElementById("batchinfo").value;
+        var date = document.getElementById("date").value;
+        var image = document.getElementById("images").value;
+
+        var data = {
+          "course": course,
+          "batch": batch,
+          "date": date,
+          "image": image
+        }
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "http://127.0.0.1:5005/search", true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.send(JSON.stringify(data));
+
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            var json = JSON.parse(xhr.responseText);
+            console.log(json);
+          }
+        };
+      }
+    </script>
     <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
     <script type="text/javascript">
       function toggleSidebar() {
