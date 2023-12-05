@@ -1,0 +1,66 @@
+.topflex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.btn {
+  display: flex;
+  gap: 20px;
+}
+.btn button {
+  width: 100px;
+  height: 70px;
+  border: none;
+  color: white;
+  border-radius: 10px;
+}
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+#Class {
+  width: 19%;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.select {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+table {
+  border-collapse: separate;
+  width: 100%;
+  border-spacing: 0 15px;
+}
+th,
+td,
+tr {
+  width: 150px;
+  text-align: center;
+  padding: 5px;
+  font-size: 20px;
+}
+.right-container {
+  padding: 20px;
+  background-color: whitesmoke;
+}
+
+input[type="checkbox"] {
+  width: 70px;
+  height: 30px;
+}
+
+.btn button:hover {
+  cursor: pointer;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}

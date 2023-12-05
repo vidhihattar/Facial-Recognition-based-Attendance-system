@@ -1,0 +1,292 @@
+body {
+  background-color: whitesmoke;
+  margin: 0;
+  padding: 0;
+}
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.containerv {
+  display: flex;
+  margin-left: 20%;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.containerv .date {
+  text-align: right;
+  font-size: 18px;
+  color: #818181;
+  margin: 10px;
+}
+.Navbar {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #4e73df;
+  width: 20%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+.Navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 30px;
+  font: bold;
+}
+.Navbar a:hover {
+  color: black;
+  text-shadow: 0 0 3px #ffffff;
+  zoom: 1.2;
+}
+
+.topbar {
+  display: flex;
+  flex-direction: row;
+  height: 80px;
+  width: 100%;
+  background-color: white;
+  justify-content: space-between;
+}
+.topbar h1 {
+  font-size: 22px;
+  color: #818181;
+  margin-top: 26px;
+}
+.profile {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 10px;
+}
+.qrcodeattendance {
+  margin: auto;
+  width: 70%;
+  height: 70%;
+}
+img:hover {
+  cursor: pointer;
+  box-shadow: #818181 0 0 2px;
+}
+
+select {
+  border-radius: 5px;
+  width: 200px;
+  height: 43px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 18px;
+  color: #818181;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.entry {
+  width: 178px;
+  height: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 18px;
+  color: #818181;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+button {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 18px;
+  background-color: #4d47df;
+  color: white;
+  align-self: flex-end;
+}
+button:hover {
+  cursor: pointer;
+  box-shadow: #818181 0 0 2px;
+}
+
+.qrcode {
+  width: 90%;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+path {
+  stroke-width: 5;
+  fill: none;
+}
+
+#topleft {
+  stroke: black;
+  stroke-dasharray: 5428.59375;
+  stroke-dashoffset: 5428.59375;
+  animation: draw 5s linear infinite;
+}
+
+#bottomleft {
+  stroke: black;
+  stroke-dasharray: 5428.59375;
+  stroke-dashoffset: 5428.59375;
+  animation: draw 5s linear infinite;
+}
+
+#midleft {
+  stroke: black;
+  stroke-dasharray: 5428.59375;
+  stroke-dashoffset: 5428.59375;
+  animation: draw 5s linear infinite;
+}
+
+#topmid {
+  stroke: black;
+  stroke-dasharray: 5428.59375;
+  stroke-dashoffset: 5428.59375;
+  animation: draw 5s linear infinite;
+}
+
+#mid {
+  stroke: black;
+  stroke-dasharray: 5428.59375;
+  stroke-dashoffset: 5428.59375;
+  animation: draw 5s linear infinite;
+}
+
+#topright {
+  stroke: black;
+  stroke-dasharray: 5428.59375;
+  stroke-dashoffset: 5428.59375;
+  animation: draw 5s linear infinite;
+}
+
+#bottomright {
+  stroke: black;
+  stroke-dasharray: 5428.59375;
+  stroke-dashoffset: 5428.59375;
+  animation: draw 5s linear infinite;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 5428.59375;
+    fill: none;
+  }
+  90% {
+    stroke-dashoffset: 0;
+    fill: none;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: black;
+  }
+}
+
+.typewriter h1 {
+  overflow: hidden;
+  border-right: 0.15em solid orange;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.15em;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
+
+/* Add this to your existing CSS */
+
+
+.wrapper {
+  display: flex;
+}
+
+
+
+
+
+.toggle-btn {
+  font-size: 30px;
+  cursor: pointer;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1;
+}
+.resp-nav-links{
+  display: none;
+}
+.resp-img{
+  padding: 10px 10px;
+}
+/* Media query for small screens */
+@media screen and (max-width: 600px) {
+  .wrapper{
+    overflow: hidden;
+  }
+  .container{
+    width: 100vw;
+  }
+  .Navbar {
+    width: 0; /* Hide the sidebar by default */
+  }
+  .Navbar .nav-links{
+    display: none;
+  }
+
+  .container {
+    margin-left: 0;
+  }
+  .att-row{
+  
+    flex-direction: column;
+
+  }
+  .sub-att{
+    width: max-content;
+    margin: 25px;
+    
+  }
+  .title{
+    display: none;
+  }
+
+  .user-resp{
+    margin-left: 25vw;
+  }
+
+  .resp-img{
+    padding: 20px 10px;
+  }
+
+
+}
+

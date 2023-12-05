@@ -1,0 +1,23 @@
+{
+  "name": "attentaker",
+  "version": "1.0.0",
+  "description": "This module can be used to take attendance in classes, this module is specicifically designed to reduce the chances of proxy in attendence.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meShubhamJha/attentake.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meShubhamJha/attentake/issues"
+  },
+  "homepage": "https://github.com/meShubhamJha/attentake#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1"
+  }
+}

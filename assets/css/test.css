@@ -1,0 +1,14 @@
+body {
+  background-color: #e5e5e5;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: block;
+  flex-direction: column;
+  height: 100%;
+}
+.sidebar {
+}
+.topbar {
+}

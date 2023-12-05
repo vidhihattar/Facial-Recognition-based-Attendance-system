@@ -1,0 +1,72 @@
+select {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.entry {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+.generateQR button {
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
+  margin-left: 20px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 18px;
+  background-color: #4d47df;
+  color: white;
+  align-self: flex-end;
+}
+.attendeelist {
+  margin: 50px 0px 10px 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  width: 82%;
+  height: 300px;
+  border-radius: 5px;
+  overflow: auto;
+}
+table {
+  width: 100%;
+  align-items: center;
+}
+
+td {
+  font-size: 18px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.attendeeprofile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0px 10px;
+}
+
+.att-row{
+  display: flex;
+  flex-direction: row;
+  width: 900px;
+  justify-content: space-around;
+  padding-top: 20px;
+}
+
+.up-imgs{
+  
+  width: 200px;
+  height: 43px;
+  
+  padding: 10px;
+  font-size: 18px;
+  
+  
+}
+.sub-att{
+  width: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:  50px 0 100px 0;
+}

@@ -1,0 +1,68 @@
+{
+  "data": [
+    {
+      "name": "Yashita Kumar",
+      "email": "yash0090@gmail.com",
+      "registration": "180115",
+      "date": "2022-04-02",
+      "class": "Class 5",
+      "attendance": "1"
+    },
+    {
+      "name": "Bhavyam Aroa",
+      "email": "bhavyam@gmail.com",
+      "registration": "170037",
+      "date": "2022-04-02",
+      "class": "Class 5",
+      "attendance": "0"
+    },
+    {
+      "name": "Khushi Gupta",
+      "email": "kg90@gmail.com",
+      "registration": "11017",
+      "date": "2022-04-02",
+      "class": "Class 5",
+      "attendance": "1"
+    },
+    {
+      "name": "Shubham Jha",
+      "email": "sjha0090@gmail.com",
+      "registration": "158017",
+      "date": "2022-04-02",
+      "class": "Class 5",
+      "attendance": "1"
+    },
+    {
+      "name": "Vidhi Hattar",
+      "email": "vh0090@gmail.com",
+      "registration": "170017",
+      "date": "2022-04-02",
+      "class": "Class 5",
+      "attendance": "0"
+    },
+    {
+      "name": "Apoorv Mishra",
+      "email": "sam0090@gmail.com",
+      "registration": "191017",
+      "date": "2022-04-02",
+      "class": "Class 6",
+      "attendance": "1"
+    },
+    {
+      "name": "Hemani Kumar",
+      "email": "hk0090@gmail.com",
+      "registration": "160017",
+      "date": "2022-04-02",
+      "class": "Class 6",
+      "attendance": "1"
+    },
+    {
+      "name": "Hemant Kumar",
+      "email": "hk0090@gmail.com",
+      "registration": "161017",
+      "date": "2022-04-02",
+      "class": "Class 6",
+      "attendance": "1"
+    }
+  ]
+}
