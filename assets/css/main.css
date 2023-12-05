@@ -250,7 +250,7 @@ path {
 /* Media query for small screens */
 @media screen and (max-width: 600px) {
   .wrapper{
-    overflow: hidden;
+    overflow-x: hidden;
   }
   .container{
     width: 100vw;
@@ -268,6 +268,7 @@ path {
   .att-row{
   
     flex-direction: column;
+    width: 55vw;
 
   }
   .sub-att{
@@ -286,7 +287,32 @@ path {
   .resp-img{
     padding: 20px 10px;
   }
+  .drop-container {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    margin: 20px 0 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 200px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px dashed #555;
+    color: #444;
+    cursor: pointer;
+    transition: background .2s ease-in-out, border .2s ease-in-out;
+  }
 
+
+  .att-btn{
+    margin: 20px 0;
+    margin-left: 20px;
+  }
+  .resp-sb{
+    margin-top: 200px;
+  }
 
 }
 

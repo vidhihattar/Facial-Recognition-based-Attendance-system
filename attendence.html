@@ -13,9 +13,13 @@
   <div class="wrapper">
     <div class="Navbar">
       <div class="toggle-btn" onclick="toggleSidebar()">☰</div>
-      <a href="attendence.html" class="resp-nav-links">Attendance</a>
-      <a href="classes.html" class="resp-nav-links">Classes</a>
-      <a href="analytics.html" class="resp-nav-links">Analytics</a>
+      <div class="resp-sb">
+        <a href="attendence.html" class="resp-nav-links">Attendance</a>
+        <a href="classes.html" class="resp-nav-links">Classes</a>
+        <a href="analytics.html" class="resp-nav-links">Analytics</a>
+
+      </div>
+     
     </div>
 
     <div class="container">
@@ -69,7 +73,7 @@
             <img class="profile" src="./assets/img/man.png" alt="Shubham Jha" height="50" width="50" />
           </div>
         </div>
-        
+
         <div class="container">
           <div class="containerv" style="margin-left: 0px; width: 30%;">
             <div class="att-row">
@@ -110,114 +114,132 @@
 
               </select>
             </div>
-            <div class="att-row">
-              <input id="date" class="entry" type="date" />
-              <div class="up-imgs">
-                <div class="resp-img">
-                <div>Upload Images:</div>
-
-
-                <input id="cls" type="file" name="filename" multiple>
+            
+              <label for="images" class="drop-container" id="dropcontainer">
+                <span class="drop-title">Drop images here</span>
+                or
+                <input type="file" id="images" accept="image/*" required multiple>
+              </label>
+              <div class="att-row">
+                <input id="date" class="entry" type="date" />
+                <button class="att-btn" onclick="generateQR();renderAttendeeList()">Submit Attendance</button>
               </div>
 
-              </div>
+            
 
-            </div>
-
-
-
-            <div class="sub-att">
-              <button onclick="generateQR();renderAttendeeList()">Submit Attendance</button>
-            </div>
-            <!-- <div id="stop" class="generateQR"> -->
           </div>
-          <!--  <div class="attendeelist">
+          
+          <!-- <div id="stop" class="generateQR"> -->
+        </div>
+        <!--  <div class="attendeelist">
             <h3 style="text-align: center; font-size: 22px; margin: 10px 0px 10px 0px; color: rgb(78, 78, 78);">Attendee List</h3>
           <table id="attendee">        
           </table> -->
-          <!-- </div> 
+        <!-- </div> 
           </div>
           <div class="containerv" style="margin-left: 0px;">
             <div id="attenQR" class="qrcodeattendance" src="" alt="QR"></div>
           </div> -->
-        </div>
       </div>
-      <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
-      <script type="text/javascript">
-        function toggleSidebar() {
-          const navbar = document.querySelector('.Navbar');
-          const lnks = document.querySelectorAll('.resp-nav-links');
-          const container = document.querySelector('.container');
-
-          if (navbar.style.width === '250px') {
-            navbar.style.width = '0';
-            lnks.forEach(function (lnk) {
-              lnk.style.display = 'none';
-            });
-            container.style.marginLeft = '0';
-          } else {
-            navbar.style.width = '250px';
-            lnks.forEach(function (lnk) {
-              lnk.style.display = 'block'; // or 'flex' depending on the display property
-            });
-            container.style.marginLeft = '250px';
-          }
-        }
-
-        //     function generateQR(){
-        //     let date = document.getElementById("date").value;
-        //     let cls = document.getElementById("cls").value;
-        //     let data = date+cls;
-        //     let qrcodediv = document.getElementById("attenQR");
-        //     qrcodediv.innerHTML = "";
-        //     var qrcode = new QRCode(qrcodediv, {
-        //     text: data,
-        //     width: 600,
-        //     height: 600,
-        //     colorDark : "black",
-        //     colorLight : "whitesmoke",
-        //     correctLevel : QRCode.CorrectLevel.H
-        //   });
-        //   //creating stop button for QR
-        //   let stop = document.getElementById("stop");
-        //   stop.innerHTML = "";
-        //   let button = document.createElement("button");
-        //   button.innerHTML = "Stop";
-        //   button.style.backgroundColor = "red";
-        //   button.onclick = function(){
-        //     qrcodediv.innerHTML = "";
-        //     stop.innerHTML = "";
-        //   }
-        //   stop.appendChild(button);
-
-        // }
-
-
-        //dyanmically rendering attendies list and appending it to table
-        function renderAttendeeList() {
-          let attendeeBox = document.getElementById("attendee");
-          let attendeeList = ["Shubham Jha", "Shubham Jha", "Shubham Jha", "Shubham Jha", "Shubham Jha", "Shubham Jha", "Shubham Jha", "Shubham Jha", "Shubham Jha", "Shubham Jha"];
-
-          for (let i = 0; i < attendeeList.length; i++) {
-            let row = document.createElement("tr");
-            let image = document.createElement("img");
-            image.src = "./assets/img/man.png";
-            image.alt = "profile";
-            image.className = "attendeeprofile"
-            let col1 = document.createElement("td");
-            let col2 = document.createElement("td");
-            col1.appendChild(image);
-            col2.innerHTML = attendeeList[i]
-            row.appendChild(col1)
-            row.appendChild(col2)
-            attendeeBox.appendChild(row)
-          }
-
-        }
-
-
-      </script>
     </div>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <script type="text/javascript">
+      function toggleSidebar() {
+        const navbar = document.querySelector('.Navbar');
+        const lnks = document.querySelectorAll('.resp-nav-links');
+        const container = document.querySelector('.container');
+
+        if (navbar.style.width === '250px') {
+          navbar.style.width = '0';
+          lnks.forEach(function (lnk) {
+            lnk.style.display = 'none';
+          });
+          container.style.marginLeft = '0';
+        } else {
+          navbar.style.width = '250px';
+          lnks.forEach(function (lnk) {
+            lnk.style.display = 'block'; // or 'flex' depending on the display property
+          });
+          container.style.marginLeft = '250px';
+        }
+      }
+
+      //     function generateQR(){
+      //     let date = document.getElementById("date").value;
+      //     let cls = document.getElementById("cls").value;
+      //     let data = date+cls;
+      //     let qrcodediv = document.getElementById("attenQR");
+      //     qrcodediv.innerHTML = "";
+      //     var qrcode = new QRCode(qrcodediv, {
+      //     text: data,
+      //     width: 600,
+      //     height: 600,
+      //     colorDark : "black",
+      //     colorLight : "whitesmoke",
+      //     correctLevel : QRCode.CorrectLevel.H
+      //   });
+      //   //creating stop button for QR
+      //   let stop = document.getElementById("stop");
+      //   stop.innerHTML = "";
+      //   let button = document.createElement("button");
+      //   button.innerHTML = "Stop";
+      //   button.style.backgroundColor = "red";
+      //   button.onclick = function(){
+      //     qrcodediv.innerHTML = "";
+      //     stop.innerHTML = "";
+      //   }
+      //   stop.appendChild(button);
+
+      // }
+
+
+      //dyanmically rendering attendies list and appending it to table
+      function renderAttendeeList() {
+        let attendeeBox = document.getElementById("attendee");
+        let attendeeList = ["Shubham Jha", "Shubham Jha", "Shubham Jha", "Shubham Jha", "Shubham Jha", "Shubham Jha", "Shubham Jha", "Shubham Jha", "Shubham Jha", "Shubham Jha"];
+
+        for (let i = 0; i < attendeeList.length; i++) {
+          let row = document.createElement("tr");
+          let image = document.createElement("img");
+          image.src = "./assets/img/man.png";
+          image.alt = "profile";
+          image.className = "attendeeprofile"
+          let col1 = document.createElement("td");
+          let col2 = document.createElement("td");
+          col1.appendChild(image);
+          col2.innerHTML = attendeeList[i]
+          row.appendChild(col1)
+          row.appendChild(col2)
+          attendeeBox.appendChild(row)
+        }
+
+      }
+
+      const dropContainer = document.getElementById("dropcontainer")
+      const fileInput = document.getElementById("images")
+
+      dropContainer.addEventListener("dragover", (e) => {
+        // prevent default to allow drop
+        e.preventDefault()
+      }, false)
+
+      dropContainer.addEventListener("dragenter", () => {
+        dropContainer.classList.add("drag-active")
+      })
+
+      dropContainer.addEventListener("dragleave", () => {
+        dropContainer.classList.remove("drag-active")
+      })
+
+      dropContainer.addEventListener("drop", (e) => {
+        e.preventDefault()
+        dropContainer.classList.remove("drag-active")
+        fileInput.files = e.dataTransfer.files
+      })
+
+
+    </script>
+  </div>
   </div>
 
 </body>
