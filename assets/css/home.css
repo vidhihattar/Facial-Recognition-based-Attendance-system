@@ -1,6 +1,6 @@
 .main {
   width: 350px;
-  height: 600px;
+  height: 700px;
   overflow: hidden;
   background-color: #4e73df;
   border-radius: 20px;
@@ -96,36 +96,33 @@ button:hover {
   transform: scale(0.6);
 }
 
-.su-input{
+.su-input {
   background: none;
   margin-top: 0;
 }
 
-.su-info{
+.su-info {
   width: 60%;
   justify-content: center;
   margin: 5px auto;
-  
 }
-.cont-home{
+.cont-home {
   display: flex;
 
   flex-direction: column;
 }
 
-.home-body-cont{
+.home-body-cont {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.admin-a{
+.admin-a {
   margin: auto 20px;
 }
 
-.admin-a a{
+.admin-a a {
   color: white;
   text-decoration: none;
-  
-
 }

@@ -74,10 +74,11 @@
           </div>
         </div>
 
+        <form name="attendance" method="post" onsubmit="takeAttendance()" enctype="multipart/form-data"
         <div class="container">
           <div class="containerv" style="margin-left: 0px; width: 30%;">
             <div class="att-row">
-              <select id="cls">
+              <select name="class" id="cls">
                 <option>Select Class</option>
                 <option>Class 1</option>
                 <option>Class 2</option>
@@ -90,7 +91,7 @@
                 <option>Class 9</option>
                 <option>Class 10</option>
               </select>
-              <select id="batchinfo">
+              <select id="batchinfo" name="batch">
                 <option>Select Batch</option>
                 <option>2020</option>
                 <option>2021</option>
@@ -98,7 +99,7 @@
 
               </select>
             </div>
-            <div class="att-row">
+            <div class="att-row" name="course">
               <select id="courseinfo">
                 <option>Select Course</option>
                 <option>Btech</option>
@@ -106,7 +107,7 @@
                 <option>Law</option>
 
               </select>
-              <select id="cls">
+              <select id="cls" name="subject">
                 <option>Select Subject</option>
                 <option>Computer Vision</option>
                 <option>Major Project</option>
@@ -118,28 +119,17 @@
               <label for="images" class="drop-container" id="dropcontainer">
                 <span class="drop-title">Drop images here</span>
                 or
-                <input type="file" id="images" accept="image/*" required multiple>
+                <input type="file" id="images" name="image" accept="image/*" required multiple>
               </label>
               <div class="att-row">
-                <input id="date" class="entry" type="date" />
-                <button class="att-btn" onclick="getStudents()">Submit Attendance</button>
+                <input id="date" name="date" class="entry" type="date" />
+                <button class="att-btn" type="submit">Submit Attendance</button>
               </div>
-
-            
-
           </div>
+          </form>
           
-          <!-- <div id="stop" class="generateQR"> -->
+
         </div>
-        <!--  <div class="attendeelist">
-            <h3 style="text-align: center; font-size: 22px; margin: 10px 0px 10px 0px; color: rgb(78, 78, 78);">Attendee List</h3>
-          <table id="attendee">        
-          </table> -->
-        <!-- </div> 
-          </div>
-          <div class="containerv" style="margin-left: 0px;">
-            <div id="attenQR" class="qrcodeattendance" src="" alt="QR"></div>
-          </div> -->
       </div>
     </div>
     <script>
@@ -147,30 +137,20 @@
       // send the values to backend
       // backend will return the list of students
 
-      function getStudents(){
-        var course = document.getElementById("courseinfo").value;
-        var batch = document.getElementById("batchinfo").value;
-        var date = document.getElementById("date").value;
-        var image = document.getElementById("images").value;
-
-        var data = {
-          "course": course,
-          "batch": batch,
-          "date": date,
-          "image": image
-        }
-
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", "http://127.0.0.1:5005/search", true);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.send(JSON.stringify(data));
-
-        xhr.onreadystatechange = function () {
-          if (xhr.readyState === 4 && xhr.status === 200) {
-            var json = JSON.parse(xhr.responseText);
-            console.log(json);
-          }
-        };
+      function takeAttendance(){
+        const formData = new FormData(document.forms["attendance"]);
+        fetch("http://localhost:5005/search", {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+            // renderAttendeeList();
+          })
+          .catch((error) => {
+            console.error(error);
+          });
       }
     </script>
     <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
